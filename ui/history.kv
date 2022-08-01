@@ -1,0 +1,429 @@
+<HistoryLayout>:
+    MDFloatLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.05
+            pos_hint: {'center_x': 0.5, 'center_y': 0.976}
+            background_color: 1,1,1,1
+            MDIconButton:
+                icon: 'arrow-left-bold'
+                pos_hint: {'center_x': 0.83, 'center_y': 0.55}
+                user_font_size: "25sp"
+                on_release:
+                    app.root.current = 'statistic_layout'
+                    root.manager.transition.direction = 'right'
+            Spinner:
+                text: '스쿨푸드 신림 1'
+                font_name: 'font\IBMPlexSansKR-Light.ttf'
+                values: ['스쿨푸드 신림 1','스쿨푸드 신림','스쿨푸드 신림']
+                font_size: sp(16)
+                pos_hint: {'center_x': 0.02, 'center_y': 0.5}
+                size_hint: (1.5,1)
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 250/255,250/255,250/255,1
+                option_cls: Factory.sp
+            Image: 
+                source: 'picture\logo.png'
+                size_hint: (1,1)
+                pos_hint: {'center_x': 0.7,'center_y': 0.5}
+                background_normal: ''
+            MDIconButton:
+                icon: 'account'
+                pos_hint: {'center_x': 0.83, 'center_y': 0.55}
+                user_font_size: "28sp"
+                on_release:
+                    app.root.current = 'inform_layout'
+                    root.manager.transition.direction = 'right'
+            MDIconButton:
+                icon: 'bell'
+                pos_hint: {'center_x': 0.93, 'center_y': 0.55}
+                user_font_size: "28sp"
+        ScrollView:
+            pos_hint: {'x':0, 'top':0.93}
+            size_hint_y: 0.93
+            do_scroll_x: False
+            do_scroll_y: True
+            bar_width: 10
+            scroll_type: ['bars', 'content']
+                
+            GridLayout:
+                id: history
+                # orientation: 'vertical'
+                height: self.minimum_height
+                # width: self.minimum_width
+                size_hint_y:  None
+                pos_hint: {'center_y': 0.0}
+                spacing:40
+                padding: 20
+                cols: 1
+                Button:
+                    text: '2022-06-16 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                    on_release: root.check()
+                Button:
+                    text: '2022-06-15 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-14 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-13 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-12 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-11 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-10 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-09 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-08 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-07 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-06 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-05 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-04 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-03 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-02 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-06-01 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-31 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-30 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-29 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-28 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-27 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-26 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-25 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-24 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-23 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-22 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-20 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-19 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-18 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-17 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-16 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-15 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-14 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-13 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-12 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-11 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-10 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-09 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-08 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-07 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-06 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-05 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-04 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-03 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-02 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}
+                Button:
+                    text: '2022-05-01 (목) 보고서'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 51/255, 119/255, 106/255, 1
+                    background_normal: ''
+                    size_hint: (0.9,0.2)
+                    pos_hint: {'center_x': 0.5}

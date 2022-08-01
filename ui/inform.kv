@@ -1,0 +1,139 @@
+<InformLayout>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.05
+            pos_hint: {'center_x': 0.5}
+            background_color: 1,1,1,1
+            MDIconButton:
+                icon: 'arrow-left-bold'
+                # pos_hint: {'center_x': 0.83, 'center_y': 0.55}
+                pos_hint: {'center_y': 0.5}
+                user_font_size: "25sp"
+                on_release:
+                    root.load_statistic()
+                    root.manager.transition.direction = 'right'
+            Image: 
+                source: 'picture\logo.png'
+                size_hint: (0.64,0.6)
+                pos_hint: {'center_y': 0.5}
+                background_normal: ''
+                
+            MDIconButton:
+                icon: 'account'
+                pos_hint: {'center_y': 0.5}
+                user_font_size: "28sp"
+            MDIconButton:
+                icon: 'bell'
+                pos_hint: {'center_y': 0.5}
+                user_font_size: "28sp"
+                on_release:
+                    app.root.current = 'history_layout'
+                    root.manager.transition.direction = 'left'
+        ScrollView:
+            pos_hint: {'x':0, 'y':0.002}
+            size_hint_y: 1
+            do_scroll_x: False
+            do_scroll_y: True
+            bar_width: 10
+            scroll_type: ['bars', 'content']
+            BoxLayout: 
+                size_hint_y: None
+                size_hint_x: None
+                orientation: 'vertical'
+                id: sizebox
+                width: root.width
+                FloatLayout:
+                    size_hint_y: None
+                    size_hint_x: None   
+                    spacing: 5
+                    pos_hint: {'y':1}
+                    size: root.width, 200
+                    MDTextFieldRect:
+                        id: name
+                        hint_text: "이름과 성"
+                        text: ''
+                        font_name: 'font\IBMPlexSansKR-Light.ttf'
+                        mutiline: False
+                        color: 0,0,0,1
+                        size_hint: 0.7, None
+                        height: '35dp'
+                        pos_hint: {'center_x':0.5, 'center_y':0.85}
+                    MDTextFieldRect:
+                        id: phone
+                        hint_text: "전화 번호"
+                        text: ''
+                        font_name: 'font\IBMPlexSansKR-Light.ttf'
+                        mutiline: False
+                        color: 0,0,0,1
+                        size_hint: 0.7, None
+                        height: '35dp'
+                        pos_hint: {'center_x':0.5, 'center_y':0.65}
+                    Button:
+                        text: '변화'
+                        font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                        font_size: '22sp'
+                        color: 1,1,1,1
+                        background_color: 51/255, 119/255, 106/255, 1
+                        background_normal: ''
+                        size_hint: None,None
+                        width: 120
+                        height:40
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        on_press: root.update()
+                    Label:
+                        markup: True
+                        text: '지점 정보'
+                        font_name: 'font\IBMPlexSansKR-SemiBold.ttf'
+                        font_size: "18sp"
+                        color: 0,0,0,1
+                        size_hint: None,None
+                        height: 20
+                        pos_hint: {'center_y':0.2}
+                        
+                GridLayout:
+                    id: inform
+                    size_hint_y: None
+                    size_hint_x: None   
+                    width: root.width
+                    cols: 1
+                
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.08
+            spacing: 25
+            padding: 20
+            canvas.before:
+                Color:
+                    rgba: 255, 255, 255, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                size_hint: (0.1, 1.6)
+                text: "지점 추가"
+                font_size: "18sp"
+                font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                pos_hint: {"center_y":0.5}
+                background_color: 51/255, 119/255, 106/255, 1
+                background_normal: ''
+                on_press: root.add_shop()
+
+            Button:
+                id: logout
+                size_hint: (0.1, 1.6)
+                text: "로그아웃"
+                font_size: "18sp"
+                font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                pos_hint: {"center_y":0.5}
+                background_color: 51/255, 119/255, 106/255, 1
+                background_normal: ''
+                on_press:
+                    app.root.current = 'login_layout'
+                    root.manager.transition.direction = 'right'
+                    root.logout()
+               
+               
+
+                

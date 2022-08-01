@@ -1,0 +1,248 @@
+<MyPopup1@Popup>
+    id: MyPopup1
+    auto_dissmis: False
+    title: ' '
+    size_hint: 0.9,0.55
+    pos_hint: {'center_x':0.5, 'center_y':0.7}
+    separator_color: 236/255, 236/255, 236/255, 1
+    background: 'picture\EC.png'
+    FloatLayout:
+        id: float
+        size_hint: 1,1
+        MDIconButton:
+            icon: 'close-outline'
+            pos_hint: {'center_x':0.97,'center_y':1.085}
+            user_font_size: "35sp"
+            on_release: root.dismiss()
+        Image: 
+            source: 'PopupImages/baemin.png'
+            pos_hint: {'center_x':0.5, 'center_y': 0.9}
+            allow_stretch: True
+            size_hint_x: 0.45
+        
+        Button:
+            text: '취소'  #cancel
+            font_name: 'font\IBMPlexSansKR-Light.ttf'
+            color: 0,0,0,1
+            background_color: 1,1,1,1
+            background_normal: ''
+            size_hint: (0.2,0.1)
+            pos_hint: {'center_x': 0.37, 'center_y': 0.25}
+            on_release: 
+                root.dismiss()
+       
+        Label:
+            markup: True
+            text: '입력하신 정보는'
+            font_name: 'font\IBMPlexSansKR-ExtraLight.ttf'
+            font_size: 17
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.12}
+        Label:
+            markup: True
+            text: '암호화되어 보관됩니다.'
+            font_name: 'font\IBMPlexSansKR-ExtraLight.ttf'
+            font_size: 17
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.05}
+
+<MyPopup2@Popup>
+    auto_dissmis: False
+    title: ' '
+    title_align: 'center'
+    title_font: 'font\IBMPlexSansKR-Light.ttf'
+    title_font_size: '18sp'
+    size_hint: 0.9,0.55
+    pos_hint: {'center_x':0.5, 'center_y':0.7}
+    separator_color: 236/255, 236/255, 236/255, 1
+    background: 'picture\EC.png'
+    FloatLayout:
+        id: float2
+        size_hint: 1,1
+        MDIconButton:
+            icon: 'close-outline'
+            pos_hint: {'center_x':0.97,'center_y':1.085}
+            user_font_size: "35sp"
+            on_release: root.dismiss()
+        Image: 
+            source: 'PopupImages/coupang_eats.png'
+            pos_hint: {'center_x':0.5, 'center_y': 0.9}
+            allow_stretch: True
+            size_hint_x: 0.45
+        
+        Button:
+            text: '취소' # cancel
+            font_name: 'font\IBMPlexSansKR-Light.ttf'
+            color: 0,0,0,1
+            background_color: 1,1,1,1
+            background_normal: ''
+            size_hint: (0.2,0.1)
+            pos_hint: {'center_x': 0.37, 'center_y': 0.25}
+            on_release: root.dismiss()
+        
+        Label:
+            markup: True
+            text: '입력하신 정보는'
+            font_name: 'font\IBMPlexSansKR-ExtraLight.ttf'
+            font_size: 17
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.12}
+        Label:
+            markup: True
+            text: '암호화되어 보관됩니다.'
+            font_name: 'font\IBMPlexSansKR-ExtraLight.ttf'
+            font_size: 17
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.05}
+
+<MyPopup3@Popup>
+    auto_dissmis: False
+    title: ' '
+    title_align: 'center'
+    title_font: 'font\IBMPlexSansKR-Light.ttf'
+    title_font_size: '18sp'
+    size_hint: 0.9,0.55
+    pos_hint: {'center_x':0.5, 'center_y':0.7}
+    separator_color: 236/255, 236/255, 236/255, 1
+    background: 'picture\EC.png'
+    FloatLayout:
+        id: float3
+        size_hint: 1,1
+        MDIconButton:
+            icon: 'close-outline'
+            pos_hint: {'center_x':0.97,'center_y':1.085}
+            user_font_size: "35sp"
+            on_release: root.dismiss()
+        Image: 
+            source: 'PopupImages/yogiyo.png'
+            pos_hint: {'center_x':0.5, 'center_y': 0.9}
+            allow_stretch: True
+            size_hint_x: 0.45
+        
+        Button:
+            text: '취소'   # cancel
+            font_name: 'font\IBMPlexSansKR-Light.ttf'
+            color: 0,0,0,1
+            background_color: 1,1,1,1
+            background_normal: ''
+            size_hint: (0.2,0.1)
+            pos_hint: {'center_x': 0.37, 'center_y': 0.25}
+            on_release: root.dismiss()
+
+        Label:
+            markup: True
+            text: '입력하신 정보는'
+            font_name: 'font\IBMPlexSansKR-ExtraLight.ttf'
+            font_size: 17
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.12}
+        Label:
+            markup: True
+            text: '암호화되어 보관됩니다.'
+            font_name: 'font\IBMPlexSansKR-ExtraLight.ttf'
+            font_size: 17
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.05}
+
+<ShopLayout>: 
+    FloatLayout:
+        id: floatshop
+        # size: root.width, 300
+        width: root.width
+        height: 300
+
+        size_hint_x: None
+        size_hint_y: None
+        spacing:2
+        Label:
+            markup: True
+            text: '지점'
+            font_name: 'font\IBMPlexSansKR-SemiBold.ttf'
+            font_size: 18
+            color: 51/255, 119/255, 106/255, 1
+            pos_hint: {'center_x': 0.08, 'center_y': 0.92}
+        MDTextFieldRect:
+            id: shop
+            hint_text: "스쿨푸드 신림 "
+            font_name: 'font\IBMPlexSansKR-Light.ttf'
+            color: 0,0,0,1
+            size_hint: 0.4, None
+            height: '35dp'
+            pos_hint: {'center_x': 0.35, 'center_y': 0.92}
+        Button:
+            id: update
+            text: '수정'
+            font_name: 'font\IBMPlexSansKR-Bold.ttf'
+            color: 1,1,1,1
+            background_color: 51/255, 119/255, 106/255, 1
+            background_normal: ''
+            size_hint: 0.15, None
+            height: 35
+            pos_hint: {'center_x': 0.65, 'center_y': 0.92}
+            on_press: root.updatedata()
+        Button:
+            id: delete
+            text: '지점삭제'
+            font_name: 'font\IBMPlexSansKR-Bold.ttf'
+            color: 1,1,1,1
+            background_color: 51/255, 119/255, 106/255, 1
+            background_normal: ''
+            size_hint: 0.22, None
+            height: 35
+            pos_hint: {'center_x': 0.85, 'center_y': 0.92}
+            on_press: root.deletedata()
+        BoxLayout:
+            size_hint: 1, None
+            orientation: 'vertical'
+            spacing:5
+            pos_hint: {'center_x':0.48,'center_y':0.53}
+            Button:
+                id: baemin
+                size_hint: None, None
+                width: 210
+                height:40
+                background_normal: 'picture/baemin.png'
+                pos_hint: {'center_x':0.51}
+                on_release: root.load_site_baemin()
+            Button:
+                id: coupang
+                size_hint: None, None
+                width: 210
+                height:40
+                background_normal: 'picture/coupang_eats.png'
+                pos_hint: {'center_x':0.51}
+                on_release: root.load_site_coupang()
+            Button:
+                id: yogi
+                size_hint: None, None
+                width: 210
+                height:40
+                background_normal:  'picture\yogi.png'
+                pos_hint: {'center_x':0.51}
+                on_release: root.load_site_yogiyo()
+        Button:
+            text: '최초 정보 수집'
+            font_name: 'font\IBMPlexSansKR-Bold.ttf'
+            color: 1,1,1,1
+            background_color: 51/255, 119/255, 106/255, 1
+            background_normal: ''
+            size_hint: None,None
+            width: 140
+            height: 40
+            pos_hint: {'center_x': 0.48, 'center_y': 0.25}
+            
+        Label: 
+            markup: True
+            text: '최초 입력 시 지난 1개월의 정보를 수'
+            font_name: 'font\IBMPlexSansKR-Light.ttf'
+            font_size: 15
+            color: 0,0,0, 1
+            pos_hint: {'center_x': 0.48, 'center_y': 0.14}
+        Label: 
+            markup: True
+            text: '집합니다. (30분 예상)'
+            font_name: 'font\IBMPlexSansKR-Light.ttf'
+            font_size: 15
+            color: 0,0,0, 1
+            pos_hint: {'center_x': 0.48, 'center_y': 0.08}
+    

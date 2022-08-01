@@ -1,0 +1,300 @@
+#: import Factory kivy.factory.Factory
+<sp@SpinnerOption>:
+    color: 0,0,0,1
+    
+    background_color: 1,1,1,1
+    background_normal: ''
+    font_name: 'font\IBMPlexSansKR-Light.ttf'
+<StatisticsLayout>:
+    MDFloatLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.05
+            pos_hint: {'center_x': 0.5, 'center_y': 0.976}
+            background_color: 1,1,1,1
+            Spinner:
+                id: spin_shop
+                # text: '스쿨푸드 신림 1'
+                font_name: 'font\IBMPlexSansKR-Light.ttf'
+                # values: 
+                icon_right: 'chevron-down'
+                font_size: sp(16)
+                text_autoupdate: True
+                pos_hint: {'center_x': 0.02, 'center_y': 0.5}
+                size_hint: (1.5,1)
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 250/255,250/255,250/255,1
+                option_cls: Factory.sp
+                # on_release: root.load_spin()
+                on_text: root.load_spin()
+
+            Image: 
+                source: 'picture\logo.png'
+                size_hint: (1,1)
+                pos_hint: {'center_x': 0.7,'center_y': 0.5}
+                background_normal: ''
+            MDIconButton:
+                icon: 'account'
+                pos_hint: {'center_x': 0.83, 'center_y': 0.55}
+                user_font_size: "28sp"
+                on_release:
+                    root.load_inform()
+                    root.manager.transition.direction = 'left'
+                 
+            MDIconButton:
+                icon: 'bell'
+                pos_hint: {'center_x': 0.93, 'center_y': 0.55}
+                user_font_size: "28sp"
+                on_release:
+                    app.root.current = 'history_layout'
+                    root.manager.transition.direction = 'left'
+                    
+        ScrollView:
+            pos_hint: {'x':0, 'y':0.002}
+            size_hint_y: 0.95
+            do_scroll_x: False
+            do_scroll_y: True
+            bar_width: 10
+            scroll_type: ['bars', 'content']
+            FloatLayout: 
+                size_hint_y: None
+                size_hint_x: None
+                size: root.width, root.height*2.4
+                Label:
+                    markup: True
+                    text: '오늘현재매출'
+                    font_name: 'font\IBMPlexSansKR-SemiBold.ttf'
+                    color: 0,0,0,1
+                    pos_hint: {'center_x': 0.18, 'center_y': 0.99}
+                Label:
+                    id: total
+                    # text: '0 원'
+                    font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.96}
+                    font_size: sp(32)
+                    color: 24/255,100/255,85/255,1
+                Button:
+                    text: '불러오기'
+                    font_name: 'font\IBMPlexSansKR-Bold.ttf'
+                    color: 1,1,1,1
+                    background_color: 0,1,1,1
+                    size_hint: (0.3,0.023)
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.93}
+                    on_release: root.loading()
+                # Image:
+                #     source: 'picture/fbloader.gif'
+                #     pos_hint: {'center_x': 0.5,'center_y': 0.90}
+                GridLayout:
+                    id: loading
+                    size_hint_y: None
+                    size_hint_x: None   
+                    width: root.width
+                    cols:1
+                    pos_hint: {'center_x': 0.5,'center_y': 0.90}
+                Label:
+                    id: update_label
+                    markup: True
+                    text: '[i](최근업데이트 : 2022-06-10 09:28:16)[/i]'
+                    font_name: 'font\IBMPlexSansKR-Light.ttf'
+                    color: 0,0,0,1
+                    pos_hint: {'center_y': 0.88}
+                Label:
+                    markup: True
+                    text: '[i]불러오기 누르신 후 30초 정도 기다려주세요.[/i]'
+                    font_name: 'font\IBMPlexSansKR-Light.ttf'
+                    color: 0,0,0,1
+                    pos_hint: {'center_y': 0.865}
+                BoxLayout:
+                    size_hint: (1,0.02)
+                    pos_hint: {'center_y':0.83}
+                    background_color: 250/255,250/255,250/255,1
+                    do_default: False
+
+                    Button:
+                        id: yesterday
+                        markup: True
+                        text: '어제'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_yesterday()
+                    Button:
+                        id: thisweek
+                        text: '이번주'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_thisweek()
+                    Button:
+                        id: lastweek
+                        text: '지난주'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_lastweek()
+                    Button:
+                        id: thismonth
+                        text: '이번 달'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_thismonth()
+                    Button:
+                        id: lastmonth
+                        text: '지난 달'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_lastmonth()
+                MDFloatLayout:
+                    size_hint: 0.9,0.165
+                    orientation: 'vertical'
+                    font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                    id:table1
+                    spacing:5
+                    height:200
+                    pos_hint: {'center_x': 0.77, 'center_y': 0.754}
+                Label:
+                    markup: True
+                    text: '이번 달 예상 마감'
+                    font_name: 'font\IBMPlexSansKR-SemiBold.ttf'
+                    color: 0,0,0,1
+                    pos_hint: {'center_x': 0.18, 'center_y': 0.647}
+                MDFloatLayout:
+                    size_hint: 0.9,0.149
+                    orientation: 'vertical'
+                    id:table2
+                    spacing:5
+                    height:200
+                    pos_hint: {'center_x': 0.77, 'center_y': 0.58}
+                BoxLayout:
+                    size_hint: (1,0.02)
+                    pos_hint: {'center_y':0.48}
+                    do_default: False
+                    Button:
+                        id: sales
+                        text: '어제의 시간별 매출'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_sales()
+                    Button:
+                        id: order
+                        text: '어제의 시간별 주문수'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                        on_release: root.show_order()
+                BoxLayout:
+                    size_hint: .85, None
+                    orientation: 'vertical'
+                    id:chart1
+                    spacing:5
+                    height:200
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.396}
+                
+                # Need Work
+                # BoxLayout:
+                #     size_hint: .85, None
+                #     orientation: 'vertical'
+                #     id:chart3
+                #     spacing:5
+                #     height:200
+                #     pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                
+                Label:
+                    markup: True
+                    text: '별점'
+                    font_name: 'font\IBMPlexSansKR-SemiBold.ttf'
+                    color: 0,0,0,1
+                    pos_hint: {'center_x': 0.08, 'center_y': 0.325}
+                MDFloatLayout:
+                    size_hint: 0.9,0.15
+                    orientation: 'vertical'
+                    id:table3
+                    spacing:5
+                    height:200
+                    pos_hint: {'center_x': 0.76, 'center_y': 0.28}
+                BoxLayout:
+                    size_hint: (1,0.02)
+                    pos_hint: {'center_y':0.2}
+                    do_default: False
+                    Button:
+                        text: '이번달 인기 메뉴'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                    Button:
+                        text: '이번달 비인기 메뉴'
+                        font_name: 'font\IBMPlexSansKR-Medium.ttf'
+                        font_size: sp(13)
+                        color: 0,0,0,1
+                        background_normal: ''
+                        background_color: 1,1,1,1
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, 0.022
+                    pos_hint: {'center_y':0.173}
+                    spacing: 5
+                    background_color: 
+                    canvas.before:
+                        Color:
+                            rgba: 255, 255, 255, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size 
+                    Button: 
+                        size_hint: (0.01, 1)
+                        text: "채널 "
+                        font_size: "15sp"
+                        font_name: 'font\IBMPlexSansKR-Bold.ttf'  
+                        color: 51/255, 119/255, 106/255, 1
+                        background_color: 1,1,1,1
+                        background_normal: ''
+                    Button: 
+                        size_hint: (0.01, 1)
+                        text: "메뉴명"
+                        font_size: "15sp"
+                        font_name: 'font\IBMPlexSansKR-Bold.ttf'  
+                        color: 51/255, 119/255, 106/255, 1
+                        background_color: 1,1,1,1
+                        background_normal: ''
+                    Button: 
+                        size_hint: (0.01, 1)
+                        text: "주문수"
+                        font_size: "15sp"
+                        font_name: 'font\IBMPlexSansKR-Bold.ttf'  
+                        color: 51/255, 119/255, 106/255, 1
+                        background_color: 1,1,1,1
+                        background_normal: ''
+                Label:
+                    markup: True
+                    text: '관악구 '
+                    font_name: 'font\IBMPlexSansKR-SemiBold.ttf'
+                    color: 0,0,0,1
+                    pos_hint: {'center_x': 0.1, 'center_y': 0.14}
+                BoxLayout:
+                    size_hint: 0.85, None
+                    orientation: 'vertical'
+                    id:chart2
+                    spacing:5
+                    height:200
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.069}

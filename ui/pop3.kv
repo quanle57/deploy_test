@@ -1,0 +1,26 @@
+<Popup3Layout>:
+    MDTextFieldRect:
+        id: user_yogiyo
+        hint_text: "Username"
+        font_name: 'font\IBMPlexSansKR-Light.ttf'
+        color: 0,0,0,1
+        size_hint: 0.8, None
+        height: '35dp'
+        pos_hint: {'center_x':0.61, 'center_y':1.5}
+    MDTextFieldRect:
+        id: pass_yogiyo
+        hint_text: "Password"
+        font_name: 'font\IBMPlexSansKR-Light.ttf'
+        color: 0,0,0,1
+        size_hint: 0.8, None
+        height: '35dp'
+        pos_hint: {'center_x':0.61, 'center_y':1.38}
+    Button:
+        text: '업데이트'  # update
+        font_name: 'font\IBMPlexSansKR-Bold.ttf'
+        color: 1,1,1,1
+        background_color: 51/255, 122/255, 183/255
+        background_normal: ''
+        size_hint: (0.28,0.1)
+        pos_hint: {'center_x':0.74, 'center_y':1.18}
+        on_release: root.update_yogiyo()

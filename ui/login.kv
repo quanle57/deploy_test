@@ -1,0 +1,112 @@
+<LoginLayout>:
+ 
+    # textinput: password
+        
+    size: root.width, root.height
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    MDFloatLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Image:
+            source:'picture\logo.png'
+            pos_hint: {'center_x': 0.5,'center_y': 0.88}
+            allow_stretch: True
+            size_hint_x: 0.55
+
+        Label:
+            text: '배달 자영업 사장님의 필수 무료앱'
+            font_name: 'font\IBMPlexSansKR-Medium.ttf'
+            font_size: sp(16)
+            pos_hint: {'center_x': 0.5,'center_y': 0.81}
+            halign: 'center'
+            color: 0,0,0,1
+
+        MDTextField:
+            id: phone
+            hint_text: 'KakaoMail ID, email, phone number' 
+            text: '0964590208' 
+            line_color_focus: 0,0,0, 1
+            size_hint: 0.82, None
+            font_size: '15sp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.71}
+
+        MDTextField:
+            id: password
+            hint_text: 'Password'
+            text: '123456'
+            line_color_focus: 0,0,0, 1
+            size_hint: 0.82, None
+            icon_right: 'lock'
+            font_size: '15sp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.64}
+            password: True
+        # Button:
+        #     size_hint: 0.16, 0.03
+        #     color: 0,0,0,1
+        #     background_color: 1,1,1,1
+        #     background_normal: ''
+        #     pos_hint: {'center_x':0.85, 'center_y': 0.646}
+        #     text: 'Hide'
+        #     on_press: root.togglevisibility()
+        MDCheckbox:
+            size_hint: 0.2, 0.1
+            pos_hint: {'center_x':0.12,'center_y': 0.58}
+            on_active: root.checkbox(self, self.active)
+        Label:
+            text: 'Stay Logged In'
+            color: 0,0,0,1
+            pos_hint: {'center_x': 0.3,'center_y': 0.58}
+
+        Button:
+            background_normal: 'picture\login3.png'
+            background_down: 'picture\login4.png'
+            pos_hint: {'center_x': 0.5,'center_y': 0.51}
+            size_hint: (.82,0.07)
+            on_release: root.loginAction()
+
+        BoxLayout:
+            size_hint: 0.8, None
+            orientation: 'horizontal'
+            pos_hint: {'center_x': 0.5,'center_y':0.47}
+          
+            Button:
+                text: 'Sign up'
+                size_hint: 0.15,0.5
+                color: 0,0,0,1
+                background_color: 1,1,1,1
+                background_normal: ''
+                font_size: '13sp'
+            Button:
+                text: 'Kakao Account'
+                size_hint: 0.24,0.5
+                color: 0,0,0,1
+                background_color: 1,1,1,1
+                background_normal: ''
+                font_size: '13sp'
+            Button:
+                text: 'Reset Password'
+                size_hint: 0.24,0.5
+                color: 0,0,0,1
+                background_color: 1,1,1,1
+                background_normal: ''
+                font_size: '13sp'
+
+        FloatLayout:
+            Image:
+                source: 'picture\grab.jpg'
+                pos_hint: {'center_x': 0.5,'center_y': 0.15}
+                allow_stretch: True
+                size_hint_x: 1.34
+            Image:
+                source: 'picture\imgL1.jpg'
+                pos_hint: {'center_x': 0.28,'center_y': 0.18}
+                size_hint: (.4,.6)
+            Image:
+                source: 'picture\imgR1.jpg'
+                pos_hint: {'center_x': 0.715,'center_y': 0.18}
+                size_hint: (.4,.6)
